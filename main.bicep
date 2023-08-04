@@ -1,4 +1,4 @@
-param location string = 'westus3'
+param location string = resourceGroup().location
 param storageName string = 'space${uniqueString(resourceGroup().id)}'
 
 resource storageaccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
