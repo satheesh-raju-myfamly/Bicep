@@ -1,39 +1,34 @@
-param location string = resourceGroup().location
-param storageName string = 'space${uniqueString(resourceGroup().id)}'
+param location string = 'westus3'
+param storageName string = 'raju8154'
+param namePrefix string = 'raju'
 
+targetScope = 'resourceGroup'
 
-resource storageaccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
-  name: storageName
-  properties:{
-    accessTier:'Hot'
+module storage 'modules/storage.bicep' = {
+   name: storageName
+   params:{
+      storageName:storageName
+      location:location
+   }
+}
+
+module appPlan 'modules/servicePlan.bicep' = {
+  name: '${namePrefix}-appPlan'
+  params:{
+    namePrefix: namePrefix
+    location: location
   }
-  location: location
-  kind: 'StorageV2'
-  sku: {
-    name: 'Premium_LRS'
+}
+
+module webApp 'modules/webApp.bicep' = {
+  name: '${namePrefix}-appDeploy'
+  params: {
+    appPlanId: appPlan.outputs.planId
+    namePrefix: namePrefix
+    location: location
   }
 }
 
 
-resource appServicePlan 'Microsoft.Web/serverfarms@2022-09-01' = {
-  name: 'xyz${storageName}'
-  location: location
-  sku: {
-    name: 'F1'
-    capacity: 1
-  }
-}
-
-resource webApplication 'Microsoft.Web/sites@2022-09-01' = {
-  name: 'zed${storageName}'
-  location: location
-
-  properties: {
-    serverFarmId: appServicePlan.id
-    httpsOnly: true
-  }
-}
-
-
-
+output siteurl string = webApp.outputs.siteurl
 

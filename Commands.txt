@@ -28,3 +28,6 @@ Bicep :
     - all modules are refernced in main.bicep
     - all modules are translated into one JSON template before deployment
     - doesn't put secrets , connection strings in module 
+
+  - Output
+     it is an input in some other service
