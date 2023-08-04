@@ -1,0 +1,10 @@
+resource group
+------------------
+ create : az group create -g MyFirstFDemo -l westus3
+ delete : 
+
+Bicep :
+------------
+ - create deployment: az deployment group create -g MyFirstDemo -f main.bicep
+ - Data types :
+    array , bool , int , object, string
