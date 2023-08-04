@@ -8,3 +8,18 @@ Bicep :
  - create deployment: az deployment group create -g MyFirstDemo -f main.bicep
  - Data types :
     array , bool , int , object, string
+ - Azure Resource Manager
+   it creates resources in azure
+   it authenticates then it creates
+     - Azure portal , Rest Client -> Azure Resource Manager-> AUTHENTICATION, Creates resources
+     - Azure powershell , Azure CLI -> SDK  -> Azure Resource Manager-> AUTHENTICATION, Creates resources
+   Resource Group : 
+     - groups relates resources    
+     - targetScope : resourceGroup
+   Managemnt Group :
+     - top layer of subscription
+      - manage access policies , other things related to subscriptions
+   Subscription : 
+     - groups relates resource groups
+     - targetScope : subscription 
+     
