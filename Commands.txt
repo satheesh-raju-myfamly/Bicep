@@ -31,3 +31,7 @@ Bicep :
 
   - Output
      it is an input in some other service
+
+  - decorators
+    - adds constraints and other information to parameters
+      @secure , @description , @maxLength, @allowed(['*z''_6b'])

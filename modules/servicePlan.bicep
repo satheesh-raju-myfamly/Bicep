@@ -1,3 +1,4 @@
+@description('name prefix ')
 param namePrefix string
 param location string =resourceGroup().location
 param sku string = 'B1'
