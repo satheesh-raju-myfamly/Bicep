@@ -1,0 +1,15 @@
+- In Azure, the storage account is called a resource type, 
+  of which you can create instances. 
+- When you create an instance of a storage account, 
+  that storage account is called a resource. 
+
+
+Resources:
+----------
+- its an array
+- elements : 
+    required : name , apiVersion , type , location
+    non-required : properties, dependsOn, tags ,copy etc
+- type :   
+   - type of resource  
+   - combination of the resource provider’s namespace and the resource type
