@@ -25,8 +25,8 @@ resource managedIdentityResourceArray 'Microsoft.ManagedIdentity/userAssignedIde
 ]
 
 
-resource serviceBusSenderRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for i in range(0,length(managedIdentityNamesArray)): {
-  name: managedIdentityResourceArray[i].name 
+resource serviceBusReceiverRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for i in range(0,length(managedIdentityNamesArray)): {
+  name: guid(managedIdentityResourceArray[i].name,serviceBusQueueResource.id,resourceGroup().id)   
   scope: serviceBusQueueResource
   properties: {
   description: roleAssignmentDescription 
