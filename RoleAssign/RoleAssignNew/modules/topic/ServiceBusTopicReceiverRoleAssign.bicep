@@ -18,7 +18,7 @@ resource serviceBusTopicResource 'Microsoft.ServiceBus/namespaces/topics@2022-10
   parent:serviceBusNameSpaceResource
 }
 
-resource managedIdentityResourceArray 'Microsoft.ManagedIdentity/identities@2023-01-31' existing = [for managedIdentityName in managedIdentityNamesArray :{
+resource managedIdentityResourceArray 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' existing = [for managedIdentityName in managedIdentityNamesArray :{
   name: managedIdentityName.topicReaderIdName
   scope: resourceGroup(managedIdentityName.topicReaderIdResourceGroup)
 }

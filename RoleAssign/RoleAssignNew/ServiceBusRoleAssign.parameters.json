@@ -17,8 +17,8 @@
                      "topicWriterIdResourceGroup" : "mi-rg"
                  }],
                  "topicReaderIds" : [{
-                    "topicWriterIdName":"mi2",
-                    "topicWriterIdResourceGroup" :"mi-rg"
+                    "topicReaderIdName":"mi2",
+                    "topicReaderIdResourceGroup" :"mi-rg"
                 }]
               }
               
@@ -37,8 +37,8 @@
                 }
                 ],
                 "queueReaderIds" : [{
-                 "queueWriterIdName":"mi4",
-                 "queueWriterIdResourceGroup" : "mi-rg"
+                 "queueReaderIdName":"mi4",
+                 "queueReaderIdResourceGroup" : "mi-rg"
              }]
              }
       
