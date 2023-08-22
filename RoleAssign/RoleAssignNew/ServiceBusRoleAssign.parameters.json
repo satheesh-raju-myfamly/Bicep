@@ -1,39 +1,53 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-     
-    "serviceBusNameSpaceName":{
-      "value": "bicep-test-sb123"
-    },
+   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+   "contentVersion": "1.0.0.0",
+   "parameters": {
+    
+   "serviceBusNameSpaceName":{
+     "value": "bicep-test-sb123"
+   },
 
-    "topicObjArray" : {
-       "value": [
+   "topicObjArray" : {
+      "value": [
 
-               {
-                  "topicName" :"test_topic1",
-                  "topicWriterIds" : ["mi1"],
-                  "topicReaderIds" : ["mi2"]
-               }
-               
-          ]
-    },
-
-    "queueObjArray" : {
-      "value": [      
-            
               {
-                 "queueName" :"test2",
-                 "queueWriterIds" : ["mi3"],
-                 "queueReaderIds" : ["mi4"]
+                 "topicName" :"test_topic1",
+                 "topicWriterIds" : [{
+                     "topicWriterIdName":"mi1",
+                     "topicWriterIdResourceGroup" : "mi-rg"
+                 }],
+                 "topicReaderIds" : [{
+                    "topicWriterIdName":"mi2",
+                    "topicWriterIdResourceGroup" :"mi-rg"
+                }]
               }
-       
+              
          ]
    },
-        
-   "roleAssignmentDescription":{
-      "value": "testing bicep deployment"
-    }
-   
-    }
+
+   "queueObjArray" : {
+     "value": [      
+           
+             {
+                "queueName" :"test2",
+                "queueWriterIds" : [
+                 {
+                    "queueWriterIdName":"mi3",
+                    "queueWriterIdResourceGroup" : "mi-rg"
+                }
+                ],
+                "queueReaderIds" : [{
+                 "queueWriterIdName":"mi4",
+                 "queueWriterIdResourceGroup" : "mi-rg"
+             }]
+             }
+      
+        ]
+  },
+       
+  "roleAssignmentDescription":{
+     "value": "testing bicep deployment"
+   }
+  
+   }
 }
