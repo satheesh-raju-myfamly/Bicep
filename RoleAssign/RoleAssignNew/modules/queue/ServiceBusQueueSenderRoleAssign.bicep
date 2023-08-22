@@ -25,5 +25,15 @@ resource managedIdentityResourceArray 'Microsoft.ManagedIdentity/userAssignedIde
 ]
 
 
+resource serviceBusSenderRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = [for i in range(0,length(managedIdentityNamesArray)): {
+  name: guid(managedIdentityResourceArray[i].name,serviceBusQueueResource.id,resourceGroup().id)  
+  scope: serviceBusQueueResource
+  properties: {
+  description: roleAssignmentDescription 
+  principalId: managedIdentityResourceArray[i].properties.principalId 
+  roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions','69a216fc-b8fb-44d8-bc22-1f3c2cd27a39')
+  }
+  }]
+
 
 
