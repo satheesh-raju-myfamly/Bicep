@@ -12,14 +12,8 @@
 
                {
                   "topicName" :"test_topic1",
-                  "topicWriterIds" : [{
-                      "topicWriterIdName":"mi1",
-                      "topicWriterIdResourceGroup" : "mi-rg"
-                  }],
-                  "topicReaderIds" : [{
-                     "topicWriterIdName":"mi2",
-                     "topicWriterIdResourceGroup" :"mi-rg"
-                 }]
+                  "topicWriterIds" : ["mi1"],
+                  "topicReaderIds" : ["mi2"]
                }
                
           ]
@@ -30,16 +24,8 @@
             
               {
                  "queueName" :"test2",
-                 "queueWriterIds" : [
-                  {
-                     "queueWriterIdName":"mi3",
-                     "queueWriterIdResourceGroup" : "mi-rg"
-                 }
-                 ],
-                 "queueReaderIds" : [{
-                  "queueWriterIdName":"mi4",
-                  "queueWriterIdResourceGroup" : "mi-rg"
-              }]
+                 "queueWriterIds" : ["mi3"],
+                 "queueReaderIds" : ["mi4"]
               }
        
          ]
