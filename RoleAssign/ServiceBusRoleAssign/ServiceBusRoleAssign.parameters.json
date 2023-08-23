@@ -4,14 +4,14 @@
    "parameters": {
     
    "serviceBusNameSpaceName":{
-     "value": "bicep-test-sb123"
+     "value": "bicep-test-sbns"
    },
 
    "topicObjArray" : {
       "value": [
 
               {
-                 "topicName" :"test_topic1",
+                 "topicName" :"test1",
                  "topicWriterIds" : [{
                      "topicWriterIdName":"mi1",
                      "topicWriterIdResourceGroup" : "mi-rg"
