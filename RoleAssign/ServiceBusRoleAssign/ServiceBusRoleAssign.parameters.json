@@ -11,7 +11,7 @@
       "value": [
 
               {
-                 "topicName" :"test1",
+                 "topicName" :"test_topic",
                  "topicWriterIds" : [{
                      "topicWriterIdName":"mi1",
                      "topicWriterIdResourceGroup" : "mi-rg"
@@ -29,7 +29,7 @@
      "value": [      
            
              {
-                "queueName" :"test2",
+                "queueName" :"test_queue",
                 "queueWriterIds" : [
                  {
                     "queueWriterIdName":"mi3",
